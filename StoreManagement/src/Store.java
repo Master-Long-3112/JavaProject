@@ -214,7 +214,7 @@ public class Store {
 
             String productList = "";
             for (Product p : products) {
-                productList += p.toString() + "; ";
+                productList += p.toString() + "\n";
             }
             bw.write(productList);
             bw.close();
@@ -226,14 +226,42 @@ public class Store {
     }
 
     public void displayStore() {
-        for (Product p : products) {
-            System.out.println(p.getInfo());
+        if (products.isEmpty())
+            System.out.println("No products in the store");
+        else {
+            for (Product p : products) {
+                System.out.println(p.getInfo());
+            }
         }
+        
     }
 
     public void displayOrder() {
-        for (Order o : orders) {
-            o.showOrder();
+        if (orders.isEmpty()){
+            System.out.println("No order yet!");
+        } else {
+            for (Order o : orders) {
+                o.showOrder();
+            } 
         }
+        
+    }
+    
+    public void searchProductByName(){
+        System.out.println("Type name of product to search");
+        String x = scan.nextLine();
+        for (Product p : products){
+            if (p.getName().toLowerCase().contains(x.toLowerCase())){
+                System.out.println(p.getInfo());
+            }
+        }
+    }
+    
+    public void showTotalRevenue(){
+        double totalRevenue = 0;
+        for (Order c : orders){
+            totalRevenue += c.caculateTotal();
+        }
+        System.out.println(" ==> TOTAL REVENUE: " + totalRevenue);
     }
 }

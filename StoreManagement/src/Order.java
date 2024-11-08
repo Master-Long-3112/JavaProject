@@ -51,8 +51,12 @@ public class Order {
         products.add(product);
     }
     
-    public void caculateTotal(){
-        
+    public double caculateTotal(){
+        totalAmount = 0;
+        for ( Product p : products){
+            totalAmount = totalAmount + p.getPrice()*p.getQuantity();
+        }
+        return totalAmount;
     }
     
     public String getOrderDetails(){
@@ -65,10 +69,12 @@ public class Order {
     }
     
     public void showOrder(){
+        
         System.out.println("OrderID: " + orderId + "; " + customer.getInfo());
         for (Product p : products){
-            System.out.println(p.getInfo());
+            System.out.println(" - "+p.getInfo());
         }
+        System.out.println(" => Total Amount: " + caculateTotal());
     }
     
     public boolean checkProduct(){

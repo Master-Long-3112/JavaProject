@@ -24,14 +24,18 @@ public class Run {
         Scanner scan = new Scanner(System.in);  
         while (true){
             System.out.println("=================================");
-            System.out.println("Please choose an option");
-            System.out.println("1. Add product to store");
-            System.out.println("2. Create an order");
-            System.out.println("3. Show all product in store");
-            System.out.println("4. Show all order");
-            System.out.println("5. Exit");
+            System.out.println("|        STORE MANAGEMENT       |");
             System.out.println("=================================");
+            System.out.println("|--> Please choose an option    |");
+            System.out.println("|1. Add product to store        |");
+            System.out.println("|2. Create an order             |");
+            System.out.println("|3. Show all product in store   |");
+            System.out.println("|4. Show all order              |");
+            System.out.println("|5. Search product by name      |");
+            System.out.println("|6. View total revenue          |");
+            System.out.println("|7. Exit                        |");
             System.out.println("=================================");
+            
 
 
             int n = Integer.parseInt(scan.nextLine());
@@ -52,6 +56,12 @@ public class Run {
                     store.displayOrder();
                     break;
                 case 5: 
+                    store.searchProductByName();
+                    break;
+                case 6: 
+                    store.showTotalRevenue();
+                    break;
+                case 7: 
                     System.exit(0);
             }
         }
