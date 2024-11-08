@@ -178,12 +178,28 @@ public class Store {
                             } else {
                                 order.addProduct(products.get(i), amount);
                                 products.get(i).updateQuantity(-amount);
+                                //Cap nhat cua hang 
+                                try {
+                                    FileWriter fw = new FileWriter("Product.txt");
+                                    BufferedWriter bw = new BufferedWriter(fw);
+
+                                    String productList = "";
+                                    for (Product p : products) {
+                                        productList += p.toString() + "\n";
+                                    }
+                                    bw.write(productList);
+                                    bw.close();
+                                    fw.close();
+                                } catch (Exception e) {
+                                    System.out.println("No such directory");
+                                }
+                                //Thoat vong lap
                                 break;
                             }
                         }
                     }
                     if (i == products.size()) {
-                        System.out.println("No product found");
+                        System.out.println("--> No product found");
                     }
                     break;
                 case 2:
@@ -213,21 +229,6 @@ public class Store {
             System.out.println("No such directory");
         }
         //
-        //Cap nhat cua hang 
-        try {
-            FileWriter fw = new FileWriter("Product.txt");
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            String productList = "";
-            for (Product p : products) {
-                productList += p.toString() + "\n";
-            }
-            bw.write(productList);
-            bw.close();
-            fw.close();
-        } catch (Exception e) {
-            System.out.println("No such directory");
-        }
 
     }
 

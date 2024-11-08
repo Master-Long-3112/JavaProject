@@ -1,7 +1,5 @@
-1; 1; masterlong; long@gmail.com; 1; 3; 4; 
-2; 405; lol@gmail.com; Person; 1; 2; 5; 
-3; 408; LongPro; gmail@gmail; 1; 4; 7; 
-4; 809; @gmail.com; Longmaster; 1; 3; 4; 
-5; 586; Long1234; long@gmail.com; 2; 3; 2; 1; 2; 
-5; 586; Long1234; long@gmail.com; 2; 3; 2; 1; 2; 
-7; 145; long@mgila.; long; 1; 1; 8; 
+1; 1; long@gmail.com; masterlong; 1; 3; 4; 
+2; 405; Person; lol@gmail.com; 1; 2; 5 ;
+3; 408; gmail@gmail; LongPro; 1; 4; 7 ;
+4; 809; Longmaster; @gmail.com; 1; 3; 4 ; 
+5; 586; long@gmail.com; Long1234; 2; 3; 2; 1; 2 ;
