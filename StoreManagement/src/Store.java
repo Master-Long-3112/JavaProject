@@ -153,14 +153,20 @@ public class Store {
         //Lua chon cua nguoi dung
         while (true) {
             System.out.println("2.1. Choose product (1)");
-            System.out.println("2.2. Finish         (2)");
+            System.out.println("2.2. Finish choosing(2)");
             int n = Integer.parseInt(scan.nextLine());
             switch (n) {
                 case 1:
+                    displayStore();
                     System.out.println("Enter product ID");
                     int id = Integer.parseInt(scan.nextLine());
                     System.out.println("Enter amount of product");
-                    int amount = Integer.parseInt(scan.nextLine());
+                    int amount;
+                    while (true) {
+                        amount = Integer.parseInt(scan.nextLine());
+                        if (amount > 0) break;
+                        System.out.println("Please type again");
+                    }
                     //Di tim xem co san pham hay khong
                     int i;
                     for (i = 0; i <= products.size() - 1; i++) {

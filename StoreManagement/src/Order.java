@@ -62,7 +62,7 @@ public class Order {
     public String getOrderDetails(){
         String productList = "";
         for (Product p : products){
-            productList += p.getProductId() +"; " + p.getQuantity();
+            productList += p.getProductId() +"; " + p.getQuantity() +"; ";
         }
         return orderId+ "; " +customer.getCustomerId()  + "; " + customer.getEmail()  + "; " +customer.getName()  +"; "  +  products.size()+ "; "
                 + productList;
